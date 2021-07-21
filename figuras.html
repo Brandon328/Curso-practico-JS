@@ -17,10 +17,45 @@
     <section>
       <h2>Calcula el área y perímetro de un cuadrado</h2>
       <form action="">
-        <label for="InputCuadrado">Escribe cuando mide el lado de tu cuadrado</label>
-        <input id="InputCuadrado" type="number">
+        <label for="InputCuadrado">
+          <span>Escribe cuando mide el lado de tu cuadrado</span>
+          <input id="InputCuadrado" type="number">
+        </label>
         <input type="button" onclick="calcularPerimetroCuadrado()" value="Calcular el perímetro">
         <input type="button" onclick="calcularAreaCuadrado()" value="Calcular el área">
+      </form>
+    </section>
+    <section>
+      <h2>Calcula el área y perímetro de un triángulo</h2>
+      <form action="">
+        <h3>Escribe cuando miden los lados de tu triángulo</h3>
+        <label for="InputTriangulo1">
+          <span>Lado 1</span>
+          <input id="InputTriangulo1" type="number">
+        </label>
+
+        <label for="InputTriangulo2">
+          <span>Lado 2</span>
+          <input id="InputTriangulo2" type="number">
+        </label>
+
+        <label for="InputTrianguloBase">
+          <span>Base</span>
+          <input id="InputTrianguloBase" type="number">
+        </label>
+        <input type="button" onclick="calcularPerimetroTriangulo()" value="Calcular el perímetro">
+        <input type="button" onclick="calcularAreaTriangulo()" value="Calcular el área">
+      </form>
+    </section>
+    <section>
+      <h2>Calcula el área y perímetro de un círculo</h2>
+      <form action="">
+        <label for="InputCirculo">
+          <span>Escribe cuando mide el radio de tu círculo</span>
+          <input id="InputCirculo" type="number">
+        </label>
+        <input type="button" onclick="calcularPerimetroCirculo()" value="Calcular el perímetro">
+        <input type="button" onclick="calcularAreaCirculo()" value="Calcular el área">
       </form>
     </section>
   </main>
