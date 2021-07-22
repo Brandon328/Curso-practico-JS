@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tablet.css" media="(max-width: 800px)">
+  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 600px)">
 
   <title>Figuras Geométricas | Curso práctico de JavaScript</title>
 </head>
@@ -34,9 +36,9 @@
           <input type="button" onclick="calcularAreaCuadrado()" value="ÁREA">
         </section>
       </form>
-      <div class="answer"></div>
-
+      <div class="answer" id="rptaCuadrado"></div>
     </section>
+
     <section class="calcular triangulo-section">
       <form action="">
         <label for="InputTriangulo1">
@@ -54,7 +56,7 @@
           <input type="button" onclick="calcularAreaTriangulo()" value="ÁREA">
         </section>
       </form>
-      <div class="answer"></div>
+      <div class="answer" id="rptaTriangulo"></div>
     </section>
     <section class="calcular circulo-section">
       <form action="">
@@ -67,7 +69,7 @@
           <input type="button" onclick="calcularAreaCirculo()" value="ÁREA">
         </section>
       </form>
-      <div class="answer"></div>
+      <div class="answer" id="rptaCirculo"></div>
     </section>
   </main>
   <footer>

@@ -20,48 +20,96 @@ const areaCirculo = (radio) => pi*radio*radio;
 
 // CUADRADO
 function calcularPerimetroCuadrado(){
+  const rpta = document.getElementById("rptaCuadrado");
   const input = document.getElementById("InputCuadrado");
-  const value = parseFloat(input.value);
-  const perimetro = perimetroCuadrado(value);
-  alert(`El perimetro del cuadrado es: ${perimetro}`);
+  
+  if(input.value===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese la medida del lado";
+  }
+  else{
+    const value = parseFloat(input.value);
+    const perimetro = perimetroCuadrado(value);
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.textContent=perimetro + " m";
+  }
 }
 
 function calcularAreaCuadrado(){
-  const input = document.getElementById("InputCuadrado");
-  const value = parseFloat(input.value);
-  const area = areaCuadrado(value);
-  alert(`El area del cuadrado es: ${area}`);
+  const rpta = document.getElementById("rptaCuadrado");
+  const input = document.getElementById("InputCuadrado").value;
+
+  if(input===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese la medida del lado";
+  }
+  else{
+    const value = parseFloat(input);
+    const area = areaCuadrado(value);
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.innerHTML = area + ' m<sup>2</sup>';
+  }
 }
 
 
 // TRIANGULO
 function calcularPerimetroTriangulo(){
-  const lado1 = parseFloat(document.getElementById("InputTriangulo1").value);
-  const lado2 = parseFloat(document.getElementById("InputTriangulo2").value);
-  const base = parseFloat(document.getElementById("InputTrianguloBase").value);
-  const perimetro = perimetroTriangulo(lado1, lado2, base);
-  alert(`El perimetro del triángulo es: ${perimetro}`);
+  const rpta = document.getElementById("rptaTriangulo");
+  const lado1 = document.getElementById("InputTriangulo1").value;
+  const lado2 = document.getElementById("InputTriangulo2").value;
+  const base = document.getElementById("InputTrianguloBase").value;
+
+  if(lado1==="" || lado2==="" || base===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese todos los lados del triángulo";
+  }
+  else{
+    const perimetro = perimetroTriangulo(parseFloat(lado1), parseFloat(lado2), parseFloat(base));
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.innerHTML = perimetro + ' m';
+  }
 }
 
 function calcularAreaTriangulo(){
-  const lado1 = parseFloat(document.getElementById("InputTriangulo1").value);
-  const base = parseFloat(document.getElementById("InputTrianguloBase").value);
-  const altura = calculaAltura(lado1,base);
-  const area = areaTriangulo(base, altura);
-  alert(`El area del triángulo es: ${area}`);
+  const rpta = document.getElementById("rptaTriangulo");
+  const lado1 = document.getElementById("InputTriangulo1").value;
+  const base = document.getElementById("InputTrianguloBase").value;
+
+  if(lado1==="" || base===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese todos los lados del triángulo";
+  }
+  else{
+    const altura = calculaAltura(parseFloat(lado1),parseFloat(base));
+    const area = areaTriangulo(parseFloat(base), altura);
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.innerHTML = area + ' m<sup>2</sup>';
+  }
+
 }
 
 function calcularAlturaTriangulo(){
-  const lado1 = parseFloat(document.getElementById("InputTriangulo1").value);
-  const lado2 = parseFloat(document.getElementById("InputTriangulo2").value);
-  const base = parseFloat(document.getElementById("InputTrianguloBase").value);
-
-  if (lado1==lado2){
-    let altura = calculaAltura(lado1, base);
-    alert('La altura del triángulo isósceles es: '+altura);
+  const rpta = document.getElementById("rptaTriangulo");
+  const lado1 = document.getElementById("InputTriangulo1").value;
+  const lado2 = document.getElementById("InputTriangulo2").value;
+  const base = document.getElementById("InputTrianguloBase").value;
+  
+  if(lado1==="" || lado2==="" || base===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese todos los lados del triángulo";
   }
-  else
-    alert('No es un isósceles');
+  else{
+    if (parseFloat(lado1)==parseFloat(lado2)){
+      let altura = calculaAltura(parseFloat(lado1), parseFloat(base));
+      rpta.style.backgroundColor="#4EABBF";
+      rpta.textContent=altura + " m";
+    }
+    else{
+      rpta.style.backgroundColor="red";
+      rpta.textContent="No es un isósceles";
+    }
+  }
+
 }
 
 function calculaAltura(lado, base){
@@ -71,13 +119,31 @@ function calculaAltura(lado, base){
 
 // CIRCULO
 function calcularPerimetroCirculo(){
-  const radio = parseInt(document.getElementById("InputCirculo").value);
-  const perimetro = perimetroCirculo(radio);
-  alert(`El perimetro del circulo es: ${perimetro}`);
+  const rpta = document.getElementById("rptaCirculo");
+  const radio = document.getElementById("InputCirculo").value;
+
+  if(radio===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese la medida del radio del círculo";
+  }
+  else{
+    const perimetro = perimetroCirculo(parseFloat(radio));
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.textContent=perimetro + " m";
+  }
 }
 
 function calcularAreaCirculo(){
-  const radio = parseInt(document.getElementById("InputCirculo").value);
-  const area = areaCirculo(radio);
-  alert(`El area del circulo es: ${area}`);
+  const rpta = document.getElementById("rptaCirculo");
+  const radio = document.getElementById("InputCirculo").value;
+  
+  if(radio===""){
+    rpta.style.backgroundColor = "red";
+    rpta.textContent="Ingrese la medida del radio del círculo";
+  }
+  else{
+    const area = areaCirculo(parseFloat(radio));
+    rpta.style.backgroundColor="#4EABBF";
+    rpta.innerHTML = area + ' m<sup>2</sup>';
+  }
 }
