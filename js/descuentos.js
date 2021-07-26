@@ -47,9 +47,7 @@ function calcularPrecioFinal(){
     const inputDiscount = document.getElementById("coupons-choice");
     const discount = inputDiscount.value;
     
-    const discountValue = coupons.find((coupon)=>{
-      return discount == coupon.nombre;
-    });
+    const discountValue = coupons.find((coupon)=> discount == coupon.nombre);
     
     const precioConDescuento = calcularPrecionConDescuento(priceValue, discountValue.descuento);
     const result = document.getElementById("resultPrice");
