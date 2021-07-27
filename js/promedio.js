@@ -1,7 +1,6 @@
-function calcularPromedio(lista){
-  // let sumaLista = 0;
-  // lista.forEach((e)=>sumaLista+=e);  
+// ============================== PROMEDIO
 
+function calcularPromedio(lista){
   const sumaLista = lista.reduce((valorAcumulado=0, valorActual)=>
   valorAcumulado + valorActual);
 
@@ -44,4 +43,20 @@ function calcularMediana(lista){
 
 
 // ======================== MODA
+
+const calcularModa = function(lista){
+  let listaCount = {};
+  
+  lista.map((e)=>{
+    if(listaCount[e]) listaCount[e] += 1;
+    else listaCount[e] = 1;
+  });
+  
+  const moda = Object.entries(listaCount).sort((a,b)=>{
+    return a[1] - b[1];
+  }).pop();
+
+  console.log(moda);
+}
+
 
