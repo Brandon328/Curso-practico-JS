@@ -13,68 +13,223 @@
   <link rel="stylesheet" href="css/tablet.css" media="(max-width: 800px)">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 600px)">
 
-  <title>Figuras Geométricas | Curso práctico de JavaScript</title>
+  <title>Curso práctico de JavaScript</title>
 </head>
 <body>
   <header>
-    <section class="logo">
-      <img src="assets/img/favicon.png" alt="logo">
-      <span>Calculadora</span>
+    <nav>
+      <section class="logo">
+        <img src="assets/img/favicon.png" alt="logo">
+        <span>Calculadora</span>
+      </section>
+      <div class="nav-options">
+        <a href="">Taller #1</a>
+        <a href="">Taller #2</a>
+        <a href="">Taller #3</a>
+        <a href="">Taller #4</a>
+      </div>
+    </nav>
+    <section class="title">
+      <h1>Curso JavaScript</h1>
+      <a href="#main">INICIAR</a>
     </section>
-    <h1>Figuras geométricas</h1>
-    <a href="#main">INICIAR</a>
   </header>
   <main id="main">
-    <section class="calcular cuadrado-section">
-      <form action="">
-        <label for="InputCuadrado">
-          <h3>¿Cuanto mide el lado de tu cuadrado?</h3>
-        </label>
-        <input id="InputCuadrado" class="Input" type="number" placeholder="Lado">
-        <section class="button-section">
-          <input type="button" onclick="calcularPerimetroCuadrado()" value="PERÍMETRO">
-          <input type="button" onclick="calcularAreaCuadrado()" value="ÁREA">
-        </section>
-      </form>
-      <div class="answer" id="rptaCuadrado"></div>
+    <h2>Figuras Geométricas</h2>
+    <section class="taller-section fig-geometricas-section">
+      <section class="calcular cuadrado-section">
+        <form action="">
+          <label for="InputCuadrado">
+            <h3>¿Cuanto mide el lado de tu cuadrado?</h3>
+          </label>
+          <input id="InputCuadrado" class="Input" type="number" placeholder="Lado">
+          <section class="button-section">
+            <input type="button" onclick="calcularPerimetroCuadrado()" value="PERÍMETRO">
+            <input type="button" onclick="calcularAreaCuadrado()" value="ÁREA">
+          </section>
+        </form>
+        <div class="answer" id="rptaCuadrado"></div>
+      </section>
+  
+      <section class="calcular triangulo-section">
+        <form action="">
+          <label for="InputTriangulo1">
+            <h3>¿Cuánto miden los lados de tu triángulo?</h3>
+          </label>
+          <section class="triangulo-input-section">
+            <input id="InputTriangulo1" class="Input" type="number" placeholder="Lado 1">
+            <input id="InputTriangulo2" class="Input" type="number" placeholder="Lado 2">
+            <input id="InputTrianguloBase" class="Input" type="number" placeholder="Base">
+          </section>
+  
+          <section class="button-section">
+            <input type="button" onclick="calcularAlturaTriangulo()" value="ALTURA">
+            <input type="button" onclick="calcularPerimetroTriangulo()" value="PERÍMETRO">
+            <input type="button" onclick="calcularAreaTriangulo()" value="ÁREA">
+          </section>
+        </form>
+        <div class="answer" id="rptaTriangulo"></div>
+      </section>
+      <section class="calcular circulo-section">
+        <form action="">
+          <label for="InputCirculo">
+            <h3>¿Cuánto mide el radio de tu círculo?</h3>
+          </label>
+          <input id="InputCirculo" class="Input" type="number" placeholder="Radio">
+          <section class="button-section">
+            <input type="button" onclick="calcularPerimetroCirculo()" value="PERÍMETRO">
+            <input type="button" onclick="calcularAreaCirculo()" value="ÁREA">
+          </section>
+        </form>
+        <div class="answer" id="rptaCirculo"></div>
+      </section>
     </section>
 
-    <section class="calcular triangulo-section">
-      <form action="">
-        <label for="InputTriangulo1">
-          <h3>¿Cuánto miden los lados de tu triángulo?</h3>
-        </label>
-        <section class="triangulo-input-section">
-          <input id="InputTriangulo1" class="Input" type="number" placeholder="Lado 1">
-          <input id="InputTriangulo2" class="Input" type="number" placeholder="Lado 2">
-          <input id="InputTrianguloBase" class="Input" type="number" placeholder="Base">
-        </section>
+    <section class="taller-section descuentos-section">
+      <section class="calcular calc-dscto-section">
+        <img class="dscto-icon" src="assets/img/discount-icon.png" alt="Icono descuento">
+        <form action="">
+          <input id="InputPrecio" class="Input" type="number" placeholder="Precio">
 
-        <section class="button-section">
-          <input type="button" onclick="calcularAlturaTriangulo()" value="ALTURA">
-          <input type="button" onclick="calcularPerimetroTriangulo()" value="PERÍMETRO">
-          <input type="button" onclick="calcularAreaTriangulo()" value="ÁREA">
-        </section>
-      </form>
-      <div class="answer" id="rptaTriangulo"></div>
+          <section class="coupon-section">
+            <h3>¿Aplicar Coupon?</h3>
+  
+            <label for="sincoupon">
+              <input id="sincoupon" type="radio" name="iscoupon" checked onclick="mostrarSeccionCouponManual()">
+              <span>Sin coupon</span>
+            </label>
+    
+            <label for="concoupon">
+              <input id="concoupon" type="radio" name="iscoupon" onclick="mostrarSeccionCouponManual()">
+              <span>Con coupon</span>
+            </label>
+          </section>
+  
+          <section id="dctoManual">
+            <input id="InputDscto" class="Input" type="number" placeholder="% Descuento">
+          </section>
+  
+          <section id="dctoCoupon">
+            <label for="coupons-choice">
+              <span>Escoge un coupon: </span><br><br>
+              <input type="text" list="coupons" class="Input" id="coupons-choice">
+            </label>
+            <datalist id="coupons">
+              <option value="StarkCoupon"></option>
+              <option value="RoggersCoupon"></option>
+              <option value="ThorCoupon"></option>
+            </datalist>
+          </section>
+
+          <section class="button-section" id="section-btn-dcto">
+            <input type="button" onclick="calcularPrecioFinal()" value="CALCULAR PRECIO FINAL">
+          </section>
+        </form>
+        <div class="answer" id="rptaDescuento"></div>
+      </section>
     </section>
-    <section class="calcular circulo-section">
-      <form action="">
-        <label for="InputCirculo">
-          <h3>¿Cuánto mide el radio de tu círculo?</h3>
-        </label>
-        <input id="InputCirculo" class="Input" type="number" placeholder="Radio">
-        <section class="button-section">
-          <input type="button" onclick="calcularPerimetroCirculo()" value="PERÍMETRO">
-          <input type="button" onclick="calcularAreaCirculo()" value="ÁREA">
-        </section>
-      </form>
-      <div class="answer" id="rptaCirculo"></div>
+
+    <section class="taller-section promedios-section">
+      <!-- ========MEADIA ARITMETICA -->
+      <section class="calcular maritmetica-card promedios-card">
+        <p class="card-promedios-title">Media aritmética</p>
+        <img src="assets/img/maritmetica-icon.jpg" alt="icono media aritmetica">
+        <form action="">
+          <div id="listaDatosMA" class="listaDatos"></div>
+
+          <div class="InputSection">
+            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="" value="CALCULAR">
+          </section>
+        </form>
+        <div class="answer" id="rptaMAritmetica"></div>
+      </section>
+
+      <!-- ========== MEDIA GEOMÉTRICA -->
+      <section class="calcular mgeometrica-card promedios-card">
+        <p class="card-promedios-title">Media geométrica</p>
+        <img src="assets/img/mgeometrica-icon.jpg" alt="icono media geométrica">
+        <form action="">
+          <div id="listaDatosMG" class="listaDatos"></div>
+
+          <div class="InputSection">
+            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="" value="CALCULAR">
+          </section>
+        </form>
+        <div class="answer" id="rptaMAritmetica"></div>
+      </section>
+
+      <!-- ========== MEDIA ARMÓNICA -->
+      <section class="calcular marmonica-card promedios-card">
+        <p class="card-promedios-title">Media armónica</p>
+        <img src="assets/img/marmonica-icon.jpg" alt="icono media armónica">
+        <form action="">
+          <div id="listaDatosMAr" class="listaDatos"></div>
+
+          <div class="InputSection">
+            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="" value="CALCULAR">
+          </section>
+        </form>
+        <div class="answer" id="rptaMAritmetica"></div>
+      </section>
+
+      <!-- ============== MEDIANA -->
+      <section class="calcular mediana-card promedios-card">
+        <p class="card-promedios-title">Mediana</p>
+        <img src="assets/img/mediana.jpg" alt="icono mediana">
+        <form action="">
+          <div id="listaDatosMeadiana" class="listaDatos"></div>
+
+          <div class="InputSection">
+            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="" value="CALCULAR">
+          </section>
+        </form>
+        <div class="answer" id="rptaMAritmetica"></div>
+      </section>
+
+      <!-- =========== MODA -->
+      <section class="calcular moda-card promedios-card">
+        <p class="card-promedios-title">Moda</p>
+        <img src="assets/img/moda.jpg" alt="icono moda">
+        <form action="">
+          <div id="listaDatosModa" class="listaDatos"></div>
+
+          <div class="InputSection">
+            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="" value="CALCULAR">
+          </section>
+        </form>
+        <div class="answer" id="rptaMAritmetica"></div>
+      </section>
     </section>
   </main>
   <footer>
     Made with 💖 by me
   </footer>
   <script src="js/figuras.js"></script>
+  <script src="js/descuentos.js"></script>
 </body>
 </html>

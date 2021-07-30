@@ -1,5 +1,4 @@
 // ============================== PROMEDIO
-
 function calcularPromedio(lista){
   const sumaLista = lista.reduce((valorAcumulado=0, valorActual)=>
   valorAcumulado + valorActual);
@@ -10,7 +9,6 @@ function calcularPromedio(lista){
 
 
 // ========================== MEDIANA
-
 function esPar (numero){
   if(numero %2===0) return true;
   else return false;
@@ -60,3 +58,18 @@ const calcularModa = function(lista){
 }
 
 
+// ========================== Media Armónica
+function calcularMediaArmonica(lista){
+  lista = lista.map(e => e**-1);
+  const sumatoria = lista.reduce((a,b)=>a+b);
+  const mediaArmonica = lista.length / sumatoria;
+  console.log("MA:" +  mediaArmonica);
+}
+
+
+// =============================== Media Geométrica
+function calcularMediaGeometrica(lista){
+  const producto = lista.reduce((a,b)=>a*b);
+  const mediaGeometrica = producto**(lista.length**-1);
+  console.log("MG: " + mediaGeometrica);
+}

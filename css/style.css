@@ -34,39 +34,61 @@ header{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding-block-start: 10%;
 }
 
-.logo{
+header nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(0, 41, 107,0.2);
+  padding: 30px 50px;
+}
+
+header nav .nav-options{
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-options a{
+  font-size: 2rem;
+  margin-inline-start: 25px;
+  color: white;
+}
+
+header .logo{
+  display: flex;
   align-items: center;
 }
 
 header .logo img{
-  width: 50px;
+  width: 21px;
+  margin-inline-end: 10px;
 }
 
 header .logo span{
   font-family: 'Monoton', cursive;
   color: white;
-  font-size: 3rem;
-  margin-block-start: 15px;
+  font-size: 2.5rem;
+}
+
+header .title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
 }
 
 header h1{
   font-size: 10rem;
   color: white;
   text-align: center;
-  margin: 100px 0;
+  margin: 0 0 100px;
 }
 
-header a{
+header .title a{
   color: white;
   border: 5px solid white;
   border-radius: 10px;
@@ -78,23 +100,40 @@ header a{
 /* ======================= MAIN */
 
 main{
+  padding: 10px 30px 50px;
   display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  flex-wrap: wrap;
-  padding: 50px 30px;
-  transition: 5s;
+  flex-direction: column;
+  align-items: center;
 }
 
+main h2{
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Monoton', cursive;
+  font-weight: 100;
+  width: 70%;
+  border-block-end: 1px solid rgb(185, 185, 185);
+}
+
+.taller-section{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
 .calcular{
-  width: 600px;
+  width: auto;
   border-radius: 5px;
   border: 1px solid rgba(168, 168, 168, 0.49);
   box-shadow: 10px 10px 31px -3px rgba(203,203,203,0.49);
   -webkit-box-shadow: 10px 10px 31px -3px rgba(203,203,203,0.49);
   -moz-box-shadow: 10px 10px 31px -3px rgba(203,203,203,0.49);
-  padding: 30px 15px;
-  margin: 30px 25px;
+
+  padding: 30px 50px;
+  margin: 0 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,9 +195,9 @@ main{
   font-size: 1.8rem;
 }
 
+/* ============================ FIGURAS GEOMÉTRICAS SECTION */
+
 /* ===================== CUADRADO */
-
-
 
 .cuadrado-section::before{
   content: '';
@@ -169,7 +208,6 @@ main{
   border-radius: 10px;
   margin-block-end: 20px;
 } 
-
 
 
 /* ======================= TRIANGULO */
@@ -203,6 +241,9 @@ main{
   margin-block-end: 20px;
 }
 
+
+
+
 /* ======================== FOOTER */
 footer{
   background-color: #01385f;
@@ -210,4 +251,89 @@ footer{
   padding: 30px 50px;
   text-align: center;
   font-size: 1.8rem;
+}
+
+
+/* ================================================DESCUENTOS SECTION */
+
+.descuentos-section{
+
+}
+
+.calc-dscto-section .dscto-icon{
+  width: 130px;
+  margin-block-end: 30px;
+}
+
+.calc-dscto-section #InputPrecio{
+  margin-block-end: 15px;
+}
+
+.calc-dscto-section .coupon-section{
+  margin-block-end: 25px;
+}
+
+.calc-dscto-section .coupon-section span{
+  font-size: 1.8rem;
+}
+
+.calc-dscto-section #dctoCoupon{
+  display: none;
+}
+
+.calc-dscto-section #dctoCoupon span{
+  font-size: 1.8rem;
+  color: var(--blue);
+}
+
+
+/* =========================================== PROMEDIOS, MEDIANA Y MODA - SECTION */
+
+.card-promedios-title{
+  background-color: white;
+  padding: 5px 10px;
+  position: absolute;
+  top: -12px;
+  margin: 0;
+  color: var(--blue);
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.addButton{
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  background-color: white;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  font-weight: bolder;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.promedios-card img{
+  width: 120px;
+  margin-block-end: 10px;
+}
+
+.listaDatos{
+  color: var(--blue);
+  font-size: 1.8rem;
+  padding: 20px 0;
+  width: 200px;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+/* ===================== MEDIA ARITMETICA SECTION */
+
+
+
+
+/* ========================= MODA SECTION */
+
+.moda-card img{
+  width: 250px;
 }
