@@ -37,6 +37,7 @@
   <main id="main">
     <h2>Figuras Geométricas</h2>
     <section class="taller-section fig-geometricas-section">
+      <!-- ============================== CUADRADO SECTION -->
       <section class="calcular cuadrado-section">
         <form action="">
           <label for="InputCuadrado">
@@ -50,7 +51,8 @@
         </form>
         <div class="answer" id="rptaCuadrado"></div>
       </section>
-  
+      
+      <!-- ================================ TRIANGULO SECTION -->
       <section class="calcular triangulo-section">
         <form action="">
           <label for="InputTriangulo1">
@@ -70,6 +72,8 @@
         </form>
         <div class="answer" id="rptaTriangulo"></div>
       </section>
+
+      <!-- ============================ CIRCULO SECTION -->
       <section class="calcular circulo-section">
         <form action="">
           <label for="InputCirculo">
@@ -85,6 +89,7 @@
       </section>
     </section>
 
+    <!-- ============================= DESCUENTOS SECTION -->
     <section class="taller-section descuentos-section">
       <section class="calcular calc-dscto-section">
         <img class="dscto-icon" src="assets/img/discount-icon.png" alt="Icono descuento">
@@ -139,11 +144,11 @@
 
           <div class="InputSection">
             <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
-            <input type="button" value="+" class="addButton">
+            <input type="button" value="+" class="addButton" onclick="agregarDatoMA()">
           </div>
 
           <section class="button-section">
-            <input type="button" onclick="" value="CALCULAR">
+            <input type="button" value="CALCULAR" onclick="mostrarPromedio()">
           </section>
         </form>
         <div class="answer" id="rptaMAritmetica"></div>
@@ -157,15 +162,15 @@
           <div id="listaDatosMG" class="listaDatos"></div>
 
           <div class="InputSection">
-            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
-            <input type="button" value="+" class="addButton">
+            <input id="InputDatoMG" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton" onclick="agregarDatoMG()">
           </div>
 
           <section class="button-section">
-            <input type="button" onclick="" value="CALCULAR">
+            <input type="button" onclick="mostrarGeometrica()" value="CALCULAR">
           </section>
         </form>
-        <div class="answer" id="rptaMAritmetica"></div>
+        <div class="answer" id="rptaMGeometrica"></div>
       </section>
 
       <!-- ========== MEDIA ARMÓNICA -->
@@ -176,15 +181,15 @@
           <div id="listaDatosMAr" class="listaDatos"></div>
 
           <div class="InputSection">
-            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
-            <input type="button" value="+" class="addButton">
+            <input id="InputDatoMAr" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton" onclick="agregarDatoMAr()">
           </div>
 
           <section class="button-section">
-            <input type="button" onclick="" value="CALCULAR">
+            <input type="button" onclick="mostrarArmonica()" value="CALCULAR">
           </section>
         </form>
-        <div class="answer" id="rptaMAritmetica"></div>
+        <div class="answer" id="rptaMArmonica"></div>
       </section>
 
       <!-- ============== MEDIANA -->
@@ -195,15 +200,15 @@
           <div id="listaDatosMeadiana" class="listaDatos"></div>
 
           <div class="InputSection">
-            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
-            <input type="button" value="+" class="addButton">
+            <input id="InputDatoMediana" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton" onclick="agregarMediana()">
           </div>
 
           <section class="button-section">
-            <input type="button" onclick="" value="CALCULAR">
+            <input type="button" onclick="mostrarMediana()" value="CALCULAR">
           </section>
         </form>
-        <div class="answer" id="rptaMAritmetica"></div>
+        <div class="answer" id="rptaMediana"></div>
       </section>
 
       <!-- =========== MODA -->
@@ -214,15 +219,37 @@
           <div id="listaDatosModa" class="listaDatos"></div>
 
           <div class="InputSection">
-            <input id="InputDatoMA" class="Input" type="number" placeholder="Ingresa dato">
-            <input type="button" value="+" class="addButton">
+            <input id="InputDatoModa" class="Input" type="number" placeholder="Ingresa dato">
+            <input type="button" value="+" class="addButton" onclick="agregarModa()">
           </div>
 
           <section class="button-section">
-            <input type="button" onclick="" value="CALCULAR">
+            <input type="button" onclick="mostrarModa()" value="CALCULAR">
           </section>
         </form>
-        <div class="answer" id="rptaMAritmetica"></div>
+        <div class="answer" id="rptaModa"></div>
+      </section>
+    </section>
+
+    <!-- ============================ ANALISIS DE SALARIOS -->
+    <section class="taller-section analisis-section">
+      <section class="calcular analisis-card">
+        <form action="">
+          <div id="listaDatosAnalisisSalarios" class="listaDatos" onclick="focusInputAS()"></div>
+
+          <div class="InputSection datosSA">
+            <div class="inputSA">
+              <input id="InputDatoASNombre" class="Input" type="text" placeholder="Ingresa nombre">
+              <input id="InputDatoASSalario" class="Input" type="number" placeholder="Ingresa salario">
+            </div>
+            <input type="button" id="addDatoAS" value="+" class="addButton" onclick="agregarPersona()">
+          </div>
+
+          <section class="button-section">
+            <input type="button" onclick="mostrarAnalisisSalarios()" value="CALCULAR" id="calcularAnalisis">
+          </section>
+        </form>
+        <div class="answer" id="rptaAS"></div>
       </section>
     </section>
   </main>
@@ -231,5 +258,7 @@
   </footer>
   <script src="js/figuras.js"></script>
   <script src="js/descuentos.js"></script>
+  <script src="js/promedio.js"></script>
+  <script src="js/analisis.js"></script>
 </body>
 </html>

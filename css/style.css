@@ -327,13 +327,33 @@ footer{
   text-align: center;
   overflow-wrap: break-word;
 }
-/* ===================== MEDIA ARITMETICA SECTION */
-
-
-
 
 /* ========================= MODA SECTION */
 
 .moda-card img{
   width: 250px;
+}
+
+
+
+
+/* ====================================================== ANALISIS DE SALARIOS */
+
+#listaDatosAnalisisSalarios{
+  height: auto;
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 0;
+  margin-block-end: 25px;
+}
+
+.datosSA{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.datosSA .inputSA{
+  display: flex;
+  flex-direction: column;
 }
