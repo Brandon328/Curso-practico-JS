@@ -1,14 +1,15 @@
-/* header{
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+header .logo span{
+  font-size: 1.7rem;
+}
+
+header .logo img{
+  width: 17px;
 }
 
 header h1{
-  font-size: 15vw;
+  font-size: 6rem;
 }
 
-header .logo span{
-  font-size: 4vw;
-} */
+main h2{
+  font-size: 3rem;
+}

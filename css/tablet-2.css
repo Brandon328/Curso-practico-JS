@@ -1,0 +1,24 @@
+header nav .nav-options{
+  position: absolute;
+  right: 40px;
+  top: 68px;
+  width: auto;
+  flex-direction: column;
+  background-color: black;
+  padding: 10px 25px;
+  border-radius: 4px;
+  z-index: 20;
+  display: none;
+}
+
+header nav .icono-menu{
+  display: block;
+}
+
+header nav .nav-options a{
+  margin: 15px 0;
+}
+
+main h2{
+  width: 85%;
+}

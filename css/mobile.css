@@ -1,3 +1,33 @@
-/* main{
-  padding: 0;
-} */
+header nav{
+  padding: 30px;
+}
+
+main h2{
+  font-size: 2.5rem;
+}
+
+main{
+  padding: 10px 30px;
+}
+
+.calcular{
+  padding: 30px;
+}
+
+@media screen and (max-width: 400px) {
+  header .logo span{
+    display: none;
+  }
+  header .logo img{
+    width: 20px;
+  }
+  header h1{
+    font-size: 5rem;
+  }
+  main h2{
+    width: 100%;
+  }
+  .calcular{
+    padding: 15px;
+  }
+}
