@@ -20,6 +20,14 @@ function agregarPersona(){
   }
   else{
     const lista = document.getElementById("listaDatosAnalisisSalarios");
+
+    if (datosAS.length===0){
+      const btnCalcular = document.getElementById("calcularAnalisis");
+      btnCalcular.style.marginBlockEnd="20px";
+      rpta.innerHTML="";
+      lista.innerHTML="";
+    } 
+
     let nPersona = new persona(nombreValue,parseFloat(salarioValue));
     datosAS.push(nPersona);
     lista.insertAdjacentHTML('afterbegin',`<div><p>Nombre: ${nombreValue} <br> Salario: S/. ${salarioValue}</p></div><hr>`);
